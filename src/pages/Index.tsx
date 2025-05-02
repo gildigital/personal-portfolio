@@ -22,7 +22,7 @@ const Index = () => {
           <meta property="og:type" content="website" />
           <meta property="og:title" content="Gildardo Martinez - Software Engineer Portfolio" />
           <meta property="og:description" content="Junior Software Engineer, Full-Stack Developer, and USAF Veteran specializing in React, Node.js, and AWS." />
-          <meta property="og:image" content="/lovable-uploads/eff682af-cd4d-4b87-8651-88063286cb65.png" />
+          <meta property="og:image" content="/uploads/eff682af-cd4d-4b87-8651-88063286cb65.png" />
           
           {/* Accessibility */}
           <html lang="en" />

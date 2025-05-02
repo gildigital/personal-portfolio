@@ -9,24 +9,24 @@ const ResearchSection = () => {
   
   const researchImages = [
     {
-      src: "/lovable-uploads/b10e5b5a-1d55-4338-8607-838c2a7040f9.png",
+      src: "/uploads/b10e5b5a-1d55-4338-8607-838c2a7040f9.png",
       caption: "Physics research team collaboration at USD lab",
     },
     {
-      src: "/lovable-uploads/fca6458c-44df-4adb-81e5-a27d4fa3e368.png",
-      caption: "Machine learning diagram for FLFM research",
+      src: "/uploads/fca6458c-44df-4adb-81e5-a27d4fa3e368.png",
+      caption: "Experimental setup for physics research",
     },
     {
-      src: "/lovable-uploads/3f34216b-fa8a-4a5d-913a-97bb386200a0.png",
-      caption: "Presenting at USD physics department poster session",
+      src: "/uploads/3f34216b-fa8a-4a5d-913a-97bb386200a0.png",
+      caption: "USD Physics Department, Shiley Center for Science and Technology",
     },
     {
-      src: "/lovable-uploads/16cea1b2-23fb-4f84-af90-25b035577011.png",
+      src: "/uploads/16cea1b2-23fb-4f84-af90-25b035577011.png",
+      caption: "Poster presentation at a USD research symposium",
+    },
+    {
+      src: "/uploads/e22b5dc0-918b-41ad-9b5a-0fdbd7e834f6.png",
       caption: "Explaining research findings to colleagues",
-    },
-    {
-      src: "/lovable-uploads/e22b5dc0-918b-41ad-9b5a-0fdbd7e834f6.png",
-      caption: "Visual representation of physics experimental setup",
     },
   ];
 
@@ -63,7 +63,7 @@ const ResearchSection = () => {
                 <div className="bg-accent/20 p-1.5 rounded mr-3 mt-0.5">
                   <ArrowRight className="h-4 w-4 text-accent" />
                 </div>
-                <p>Optimized data preprocessing pipelines reducing analysis time by 85%</p>
+                <p>Reduced data requirements by 99%</p>
               </div>
             </div>
           </div>
@@ -116,13 +116,13 @@ const ResearchSection = () => {
                 
                 <div className="flex flex-wrap gap-3">
                   <Button asChild className="flex items-center">
-                    <a href="/paper.pdf" download>
+                    <a href="/Martinez et al. - 2024 - CNNDDM.pdf" download>
                       <Download className="mr-2 h-4 w-4" />
                       Download Paper
                     </a>
                   </Button>
                   <Button asChild variant="outline" className="flex items-center">
-                    <a href="https://doi.org/10.1039/example" target="_blank" rel="noopener noreferrer">
+                    <a href="https://doi.org/10.1039/D4SM00881B" target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       View on Publisher Site
                     </a>
@@ -132,7 +132,7 @@ const ResearchSection = () => {
               
               <div className="hidden md:block">
                 <img 
-                  src="/lovable-uploads/8167a4d3-79d9-449d-b3b7-d5172623e40e.png" 
+                  src="/uploads/8167a4d3-79d9-449d-b3b7-d5172623e40e.png" 
                   alt="Research publication" 
                   className="rounded-lg object-cover w-full h-full"
                 />

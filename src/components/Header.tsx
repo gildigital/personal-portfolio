@@ -45,7 +45,7 @@ const Header = () => {
             </a>
           ))}
           <Button asChild className="bg-accent hover:bg-accent/80 text-primary">
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a href="/Gildardo_Martinez_Software_Engineer_FullStack_Node_React_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
           </Button>
         </nav>
 
@@ -74,7 +74,7 @@ const Header = () => {
               </a>
             ))}
             <Button asChild className="bg-accent hover:bg-accent/80 text-primary w-full">
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+              <a href="/Gildardo_Martinez_Software_Engineer_FullStack_Node_React_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
             </Button>
           </nav>
         </div>

@@ -37,7 +37,7 @@ const HeroSection = () => {
           <div className="relative">
             <div className="absolute inset-0 -z-10 bg-accent/20 rounded-lg transform translate-x-4 translate-y-4"></div>
             <img 
-              src="/lovable-uploads/eff682af-cd4d-4b87-8651-88063286cb65.png"
+              src="/uploads/55a6d4cf-32ef-4b28-b7b0-d20fdcd7d662.png"
               alt="Gildardo Martinez - Software Engineer"
               className="rounded-lg object-cover w-full h-auto shadow-lg border border-accent/30"
             />
@@ -57,7 +57,7 @@ const HeroSection = () => {
           <div className="tech-badge">TypeScript</div>
           <div className="tech-badge">React</div>
           <div className="tech-badge">Node.js</div>
-          <div className="tech-badge">AWS</div>
+          <div className="tech-badge">Java</div>
           <div className="tech-badge">PostgreSQL</div>
           <div className="tech-badge">Python</div>
         </div>

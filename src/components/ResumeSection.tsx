@@ -108,7 +108,7 @@ const ResumeSection = () => {
               <div className="flex justify-between items-center">
                 <h3 className="text-2xl font-bold mb-2">Skills & Expertise</h3>
                 <Button asChild variant="outline" className="hidden md:flex">
-                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <a href="/Gildardo_Martinez_Software_Engineer_FullStack_Node_React_Resume.pdf" target="_blank" rel="noopener noreferrer">
                     Download Resume
                   </a>
                 </Button>
@@ -126,7 +126,7 @@ const ResumeSection = () => {
             </div>
             
             <Button asChild className="w-full md:hidden mt-4">
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/Gildardo_Martinez_Software_Engineer_FullStack_Node_React_Resume.pdf" target="_blank" rel="noopener noreferrer">
                 Download Resume
               </a>
             </Button>

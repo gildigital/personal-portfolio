@@ -96,7 +96,7 @@ const ProjectsSection = () => {
     },
     {
       title: "Full-Stack Job Application System",
-      description: "An automation platform with React, Node.js, and AI Vision. Scrapes jobs, matches resumes, and auto-applies using Playwright.",
+      description: "An automation platform (educational use only) with React, Node.js, and AI Vision. Scrapes jobs, matches resumes, and auto-applies using Playwright.",
       image: "https://images.unsplash.com/photo-1460574283810-2aab119d8511",
       tech: ["React", "Node.js", "Playwright", "AI Vision", "MongoDB"],
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",

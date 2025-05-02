@@ -70,11 +70,11 @@ const ContactSection = () => {
             
             <div className="space-y-4 pt-4">
               <a 
-                href="mailto:gildardo.martinez@email.com" 
+                href="mailto:martinezgil.sd@gmail.com" 
                 className="flex items-center space-x-3 text-primary-foreground/80 hover:text-accent transition-colors"
               >
                 <Mail className="h-5 w-5" />
-                <span>gildardo.martinez@email.com</span>
+                <span>martinezgil.sd@gmail.com</span>
               </a>
               
               <a 
