@@ -1,73 +1,122 @@
-# Welcome to your Lovable project
+# Gildardo Martinez's Portfolio
 
-## Project info
+Welcome to my professional portfolio, showcasing my journey as a junior software engineer and USAF veteran transitioning from a Physics BS to full-stack development. This site highlights my ability to build scalable, user-focused applications using React, TypeScript, Node.js, and AWS.
 
-**URL**: https://lovable.dev/projects/720efe57-156f-451c-960b-09deb4e25086
+Explore my projects and resume to see how I combine technical rigor from physics and teamwork from the Air Force to deliver innovative software solutions.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🧠 Project Overview
 
-**Use Lovable**
+This portfolio is a **responsive**, **SEO-optimized**, and **WCAG-compliant** landing page built with:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/720efe57-156f-451c-960b-09deb4e25086) and start prompting.
+- **Frontend**: React, TypeScript, Tailwind CSS, [shadcn/ui](https://ui.shadcn.com/)
+- **Build Tool**: Vite (for fast development and production builds)
+- **Backend**: Node.js (used for contact form via Brevo SMTP)
 
-Changes made via Lovable will be committed automatically to this repo.
+### 🔑 Key Features
 
-**Use your preferred IDE**
+- **Hero Section**: Introduces my background with a tech-inspired design.
+- **Resume Highlights**:
+  - Built a full-stack SaaS app at *LeetPhys*, serving 1000+ users
+  - Developed Java applications at AWS, optimizing petabyte-scale systems.
+  - Authored a *Soft Matter* paper, reducing data needs by 99% with PyTorch.
+- **Projects**: Showcases two full-stack applications with demo videos and GitHub links.
+- **Research**: Highlights my physics research with a downloadable publication.
+- **Contact Form**: Integrated with Brevo SMTP for seamless communication.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🌐 Live Demo
 
-Follow these steps:
+Hosted on [Vercel](https://vercel.com)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Visit: [https://gilmartinez.org](https://gilmartinez.org)
+- Connect: [LinkedIn](https://linkedin.com/in/gildigital) | [GitHub](https://github.com/gildigital)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🛠️ Technologies Used
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn-ui
+- Vite
+- Node.js
+
+---
+
+## 🚀 Running the Project Locally
+
+To run the portfolio locally:
+
+### Prerequisites
+
+Ensure you have **Node.js** and **npm** installed (you can use [nvm](https://github.com/nvm-sh/nvm) for easy setup).
+
+### Steps
+
+```
+# Clone the repository
+git clone https://github.com/gildigital/personal-portfolio.git
+
+# Navigate to the project directory
+cd personal-portfolio
+
+# Install dependencies
+npm install
+
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 📝 Editing the Code
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+You can edit the codebase using **VS Code** or any preferred IDE:
 
-**Use GitHub Codespaces**
+```
+# Open the folder in VS Code
+code personal-portfolio
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+To push changes:
 
-## What technologies are used for this project?
+```
+git add .
+git commit -m "Update portfolio"
+git push origin main
+```
 
-This project is built with:
+I love well formulated git commit messages, such as:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```
+# -------50--------character--------heading------
+Add change to class
 
-## How can I deploy this project?
+# Followed by an empty line then the body
+## What changed and why?
+- Fixed logic because...
 
-Simply open [Lovable](https://lovable.dev/projects/720efe57-156f-451c-960b-09deb4e25086) and click on Share -> Publish.
+## How was the change tested?
+- Output was verified...
+```
 
-## Can I connect a custom domain to my Lovable project?
+## 🌍 Deploying to Vercel
+The portfolio is deployed using Vercel.
 
-Yes, you can!
+To deploy updates:
+Push your changes to the main branch of the repo:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```
+https://github.com/gildigital/personal-portfolio.git
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Import the repository (Vite settings will be auto-detected).
+
+
+## 📬 Contact
+I’m eager to connect with recruiters and employers about software engineering opportunities.
+Reach out through the contact form on the site or connect with me on LinkedIn.
+
+Thanks for exploring my work!
