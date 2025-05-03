@@ -21,7 +21,8 @@ const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
   message: z
     .string()
-    .min(10, { message: "Message must be at least 10 characters." }),
+    .min(10, { message: "Message must be at least 10 characters." })
+    .max(3000, { message: "Message must be under 3000 characters." }),
 });
 
 type FormValues = z.infer<typeof formSchema>;

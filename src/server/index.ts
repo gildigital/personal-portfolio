@@ -4,6 +4,7 @@ import contactRouter from "./routes/contact";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import cors from "cors";
+import rateLimit from "express-rate-limit";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 
@@ -14,13 +15,18 @@ const PORT = process.env.PORT || 5000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-app.use(cors()); // Add if frontend is served separately
+const limiter = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  max: 3, // limit each IP to 3 requests per minute
+  message: "Too many requests. Please try again later.",
+});
+
+app.use(cors()); // frontend is served separately
 app.use(bodyParser.json());
 
 // Register your contact form route
-app.use("/api/contact", contactRouter);
+app.use("/api/contact", limiter, contactRouter);
 
-// Optional: serve static files if you're bundling front + back
 app.use(express.static(join(__dirname, "../../public")));
 
 app.listen(PORT, () => {

@@ -53,6 +53,7 @@
     "dotenv": "^16.5.0",
     "embla-carousel-react": "^8.3.0",
     "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.462.0",
     "next-themes": "^0.3.0",
@@ -66,9 +67,9 @@
     "react-router-dom": "^6.26.2",
     "recharts": "^2.12.7",
     "sonner": "^1.5.0",
-    "tsx": "^4.19.4",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
+    "tsx": "^4.19.4",
     "vaul": "^0.9.3",
     "zod": "^3.23.8"
   },
