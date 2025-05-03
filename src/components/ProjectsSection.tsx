@@ -100,7 +100,7 @@ const ProjectsSection = () => {
       image: "https://images.unsplash.com/photo-1460574283810-2aab119d8511",
       tech: ["React", "Node.js", "Playwright", "AI Vision", "MongoDB"],
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      githubUrl: "https://github.com/gildigital/job-app-system",
+      githubUrl: "https://github.com/gildigital/AIJobApply",
       delay: 0.4
     }
   ];
