@@ -76,7 +76,7 @@ const ResumeSection = () => {
     {
       title: "Research Assistant",
       company: "USD",
-      period: "January 2023 -  December 2024",
+      period: "January 2023 - December 2024",
       description:
         "Authored first-author paper in Soft Matter, developing ML tools with PyTorch to reduce data needs by 99%.",
       icon: <PenTool className="h-4 w-4" />,
