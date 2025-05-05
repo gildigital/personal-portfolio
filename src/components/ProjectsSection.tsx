@@ -123,7 +123,7 @@ const ProjectsSection = () => {
       description: "An automation platform (educational use only) with React, Node.js, and AI Vision. Scrapes jobs, matches resumes, and auto-applies using Playwright.",
       image: "https://images.unsplash.com/photo-1460574283810-2aab119d8511",
       tech: ["React", "Node.js", "Playwright", "AI Vision", "PostgreSQL"],
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      videoUrl: "https://www.youtube.com/embed/XsNXg6mOe5Q",
       githubUrl: "https://github.com/gildigital/AIJobApply",
       delay: 0.4
     }
