@@ -1,7 +1,14 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/ui/dialog";
 import { Github, ExternalLink, Play, Globe } from "lucide-react";
 
 interface ProjectProps {
@@ -15,7 +22,16 @@ interface ProjectProps {
   delay: number;
 }
 
-const Project = ({ title, description, image, tech, videoUrl, githubUrl, liveDemoUrl, delay }: ProjectProps) => {
+const Project = ({
+  title,
+  description,
+  image,
+  tech,
+  videoUrl,
+  githubUrl,
+  liveDemoUrl,
+  delay,
+}: ProjectProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -25,16 +41,50 @@ const Project = ({ title, description, image, tech, videoUrl, githubUrl, liveDem
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative h-64 w-full">
-        <div className={`absolute inset-0 bg-black/60 flex items-center justify-center transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-          <Play className="h-16 w-16 text-white" />
-        </div>
-        <img
-          src={image}
-          alt={title}
-          className="h-full w-full object-cover"
-        />
-      </div>
+      <Dialog>
+        <DialogTrigger asChild>
+          <div className="relative h-64 w-full rounded-lg overflow-hidden group cursor-pointer">
+            {/* Glowing border on hover */}
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-70 transition duration-300 z-0"></div>
+
+            {/* Image */}
+            <img
+              src={image}
+              alt={title}
+              className="h-full w-full object-cover relative z-10"
+            />
+
+            {/* Dark overlay with subtle "Preview" text */}
+            <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+              <span className="text-white text-lg font-semibold tracking-wide">
+                Preview
+              </span>
+            </div>
+          </div>
+        </DialogTrigger>
+
+        <DialogContent className="max-w-5xl p-4 flex items-center justify-center bg-transparent border-none shadow-none">
+          <div className="relative max-h-[90vh] overflow-auto rounded-md shadow-lg">
+            {/* Image */}
+            <img
+              src={image}
+              alt={`${title} Full View`}
+              className="w-full h-auto object-contain rounded"
+            />
+          </div>
+
+          {/* Custom Close Button */}
+          <DialogClose asChild>
+            <button
+              className="custom-close-btn absolute top-0 right-2  /* Mobile: Inside */
+                           md:top-0 md:-right-2 /* Medium screens & up: Outside */
+                           z-50 w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white text-sm font-bold hover:bg-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2"
+            >
+              ✕
+            </button>
+          </DialogClose>
+        </DialogContent>
+      </Dialog>
 
       <div className="p-6 bg-card">
         <h3 className="text-xl font-bold mb-2">{title}</h3>
@@ -42,7 +92,9 @@ const Project = ({ title, description, image, tech, videoUrl, githubUrl, liveDem
 
         <div className="flex flex-wrap gap-2 mb-4">
           {tech.map((item) => (
-            <span key={item} className="tech-badge">{item}</span>
+            <span key={item} className="tech-badge">
+              {item}
+            </span>
           ))}
         </div>
 
@@ -54,11 +106,12 @@ const Project = ({ title, description, image, tech, videoUrl, githubUrl, liveDem
                 View Demo
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-3xl">
+            <DialogContent className="max-w-3xl bg-background border-none">
               <DialogHeader>
                 <DialogTitle>{title} Demo</DialogTitle>
                 <DialogDescription>
-                  A demonstration of key features and functionality (working on demos, please enjoy this song)
+                  A demonstration of key features and functionality (working on
+                  demos, please enjoy this song)
                 </DialogDescription>
               </DialogHeader>
               <div className="aspect-video w-full">
@@ -110,23 +163,31 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: "LeetPhys",
-      description: "A full-stack SaaS app with React, Node.js, and Stripe. Features real-time analytics and 400% signup growth via Google One-Click Signup.",
+      description:
+        "A full-stack SaaS app with React, Node.js, and Stripe. Features real-time analytics and 400% signup growth via Google One-Click Signup.",
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-      tech: ["React", "Node.js", "TypeScript", "PostgreSQL", "Stripe", "Google Auth"],
+      tech: [
+        "React",
+        "Node.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Stripe",
+        "Google Auth",
+      ],
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      // githubUrl: "https://github.com/gildigital/leetphys",
       liveDemoUrl: "https://leetphys.com",
-      delay: 0.2
+      delay: 0.2,
     },
     {
       title: "Full-Stack Job Application System",
-      description: "An automation platform (educational use only) with React, Node.js, and AI Vision. Scrapes jobs, matches resumes, and auto-applies using Playwright.",
-      image: "https://images.unsplash.com/photo-1460574283810-2aab119d8511",
+      description:
+        "An automation platform (educational use only) with React, Node.js, and AI Vision. Scrapes jobs, matches resumes, and auto-applies using Playwright.",
+      image: "public/uploads/AIJobApply.png",
       tech: ["React", "Node.js", "Playwright", "AI Vision", "PostgreSQL"],
       videoUrl: "https://www.youtube.com/embed/XsNXg6mOe5Q",
       githubUrl: "https://github.com/gildigital/AIJobApply",
-      delay: 0.4
-    }
+      delay: 0.4,
+    },
   ];
 
   return (
@@ -142,7 +203,11 @@ const ProjectsSection = () => {
 
         <div className="flex justify-center mt-12">
           <Button asChild variant="outline" className="group">
-            <a href="https://github.com/gildigital" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com/gildigital"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               View More Projects
               <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </a>

@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -75,7 +74,7 @@
     --border: 217 33% 18%;
     --input: 217 33% 18%;
     --ring: 213 27% 84%;
-    
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -91,7 +90,7 @@
   * {
     @apply border-border;
   }
-  
+
   html {
     @apply scroll-smooth;
   }
@@ -100,27 +99,32 @@
     @apply bg-background text-foreground font-sans;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
   }
-  
+
   section {
     @apply py-16 md:py-24 px-6;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-sans font-bold tracking-tight;
   }
-  
+
   h1 {
     @apply text-4xl md:text-5xl lg:text-6xl mb-6;
   }
-  
+
   h2 {
     @apply text-3xl md:text-4xl mb-6;
   }
-  
+
   h3 {
     @apply text-2xl md:text-3xl mb-4;
   }
-  
+
   .container {
     @apply mx-auto px-4 sm:px-6 lg:px-8;
   }
@@ -130,25 +134,25 @@
   .section-title {
     @apply relative pb-2 mb-8 text-2xl md:text-3xl font-bold;
   }
-  
+
   .section-title::after {
     content: "";
     @apply absolute bottom-0 left-0 w-16 h-1 bg-accent;
   }
-  
+
   .timeline-item {
     @apply relative pl-10 pb-10 border-l border-slate;
   }
-  
+
   .timeline-item::before {
     content: "";
     @apply absolute w-4 h-4 bg-accent rounded-full -left-2 mt-1.5;
   }
-  
+
   .timeline-item:last-child {
     @apply border-l-0 pb-0;
   }
-  
+
   .card-hover {
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
   }
@@ -156,11 +160,11 @@
   .badge {
     @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80;
   }
-  
+
   .badge-accent {
     @apply bg-accent text-accent-foreground hover:bg-accent/80;
   }
-  
+
   .tech-badge {
     @apply inline-block px-3 py-1 text-xs font-medium rounded-full bg-secondary text-secondary-foreground mr-2 mb-2;
   }
@@ -170,7 +174,7 @@
   .text-balance {
     text-wrap: balance;
   }
-  
+
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-teal-dark;
   }
