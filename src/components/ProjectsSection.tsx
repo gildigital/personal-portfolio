@@ -174,7 +174,7 @@ const ProjectsSection = () => {
         "Stripe",
         "Google Auth",
       ],
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      videoUrl: "https://www.youtube.com/embed/T7X-u-2scpI",
       liveDemoUrl: "https://leetphys.com",
       delay: 0.2,
     },
