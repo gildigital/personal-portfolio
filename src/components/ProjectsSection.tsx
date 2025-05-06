@@ -110,8 +110,7 @@ const Project = ({
               <DialogHeader>
                 <DialogTitle>{title} Demo</DialogTitle>
                 <DialogDescription>
-                  A demonstration of key features and functionality (working on
-                  demos, please enjoy this song)
+                  A demonstration of key features and functionality
                 </DialogDescription>
               </DialogHeader>
               <div className="aspect-video w-full">
