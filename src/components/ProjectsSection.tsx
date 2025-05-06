@@ -165,7 +165,7 @@ const ProjectsSection = () => {
       title: "LeetPhys",
       description:
         "A full-stack SaaS app with React, Node.js, and Stripe. Features real-time analytics and 400% signup growth via Google One-Click Signup.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+      image: "public/uploads/leetphys-full.png",
       tech: [
         "React",
         "Node.js",
