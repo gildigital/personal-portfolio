@@ -164,7 +164,7 @@ const ProjectsSection = () => {
       title: "LeetPhys",
       description:
         "A full-stack SaaS app with React, Node.js, and Stripe. Features real-time analytics and 400% signup growth via Google One-Click Signup.",
-      image: "public/uploads/leetphys-full.png",
+      image: "/uploads/leetphys-full.png",
       tech: [
         "React",
         "Node.js",
@@ -181,7 +181,7 @@ const ProjectsSection = () => {
       title: "Full-Stack Job Application System",
       description:
         "An automation platform (educational use only) with React, Node.js, and AI Vision. Scrapes jobs, matches resumes, and auto-applies using Playwright.",
-      image: "public/uploads/AIJobApply.png",
+      image: "/uploads/AIJobApply.png",
       tech: ["React", "Node.js", "Playwright", "AI Vision", "PostgreSQL"],
       videoUrl: "https://www.youtube.com/embed/XsNXg6mOe5Q",
       githubUrl: "https://github.com/gildigital/AIJobApply",
