@@ -76,9 +76,9 @@ const Project = ({
           {/* Custom Close Button */}
           <DialogClose asChild>
             <button
-              className="custom-close-btn absolute top-0 right-2  /* Mobile: Inside */
-                           md:top-0 md:-right-2 /* Medium screens & up: Outside */
-                           z-50 w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white text-sm font-bold hover:bg-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2"
+              className="custom-close-btn absolute top-0 right-2 
+                         md:top-0 md:-right-2 
+                         z-50 w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white text-sm font-bold hover:bg-red-600 transition-colors focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2"
             >
               ✕
             </button>
@@ -98,10 +98,14 @@ const Project = ({
           ))}
         </div>
 
-        <div className="flex space-x-3">
+        <div className="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-3">
           <Dialog>
             <DialogTrigger asChild>
-              <Button variant="default" size="sm" className="flex items-center">
+              <Button
+                variant="default"
+                size="sm"
+                className="flex items-center w-full sm:w-auto justify-center"
+              >
                 <Play className="h-4 w-4 mr-2" />
                 View Demo
               </Button>
@@ -130,7 +134,7 @@ const Project = ({
               asChild
               variant="outline"
               size="sm"
-              className="flex items-center"
+              className="flex items-center w-full sm:w-auto justify-center"
             >
               <a href={liveDemoUrl} target="_blank" rel="noopener noreferrer">
                 <Globe className="h-4 w-4 mr-2" />
@@ -143,7 +147,7 @@ const Project = ({
                 asChild
                 variant="outline"
                 size="sm"
-                className="flex items-center"
+                className="flex items-center w-full sm:w-auto justify-center"
               >
                 <a href={githubUrl} target="_blank" rel="noopener noreferrer">
                   <Github className="h-4 w-4 mr-2" />
