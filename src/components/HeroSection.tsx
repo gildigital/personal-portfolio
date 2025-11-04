@@ -1,4 +1,3 @@
-
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -10,15 +9,15 @@ const HeroSection = () => {
           <h1 className="leading-tight">
             Gildardo Martinez
             <br />
-            <span className="text-gradient">Junior Software Engineer</span>
+            <span className="text-gradient">Physicist & Equipment Engineer</span>
           </h1>
           
           <p className="text-xl text-slate max-w-md">
-            Full-Stack Developer | USAF Veteran
+            Semiconductor Fabrication | Photonics | Process Systems
           </p>
           
           <p className="text-lg text-slate-dark max-w-md">
-            Building scalable apps with React, Node.js, and AWS. From physics research to production code.
+            Full-Stack Developer & USAF Veteran — bridging physics, software, and precision engineering from research to production.
           </p>
           
           <div className="flex flex-wrap gap-4 pt-4">
@@ -46,7 +45,7 @@ const HeroSection = () => {
           <div className="absolute -bottom-6 -right-6 bg-card p-4 rounded-lg shadow-lg border border-border">
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <p className="font-mono text-sm">Available for opportunities</p>
+              <p className="font-mono text-sm">Equipment Engineer @ Skorpios Technologies</p>
             </div>
           </div>
         </div>
@@ -54,12 +53,12 @@ const HeroSection = () => {
       
       <div className="container mt-12">
         <div className="flex flex-wrap gap-6 justify-center md:justify-start">
-          <div className="tech-badge">TypeScript</div>
-          <div className="tech-badge">React</div>
-          <div className="tech-badge">Node.js</div>
-          <div className="tech-badge">Java</div>
-          <div className="tech-badge">PostgreSQL</div>
-          <div className="tech-badge">Python</div>
+          <div className="tech-badge">Semiconductor Fabrication</div>
+          <div className="tech-badge">Plasma Physics</div>
+          <div className="tech-badge">Robotics & Motion Control</div>
+          <div className="tech-badge">Process Debugging</div>
+          <div className="tech-badge">Linux / Unix OS</div>
+          <div className="tech-badge">Data Analysis (Python)</div>
         </div>
       </div>
     </section>
