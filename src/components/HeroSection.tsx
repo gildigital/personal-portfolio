@@ -1,17 +1,13 @@
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Targets the radar "acquires". The animation delay is derived from each
-// target's clockwise angle (from 12 o'clock) so a blip flares exactly as the
-// sweep arm passes over it. `r` is the radius as a % of the scope.
+// The radar acquires a single target — the engineer it was scanning for.
+// The animation delay is derived from the target's clockwise angle (from
+// 12 o'clock) so the blip flares exactly as the sweep arm passes over it.
+// `r` is the radius as a % of the scope.
 const RADAR_DURATION = 4.5; // seconds — must match --radar-duration in index.css
 const RADAR_TARGETS = [
-  { a: 38, r: 30 },
-  { a: 92, r: 19 },
-  { a: 137, r: 37 },
-  { a: 198, r: 26 },
-  { a: 256, r: 35 },
-  { a: 312, r: 16 },
+  { a: 52, r: 31 },
 ];
 
 const WaferGraphic = () => (
