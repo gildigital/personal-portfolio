@@ -68,7 +68,7 @@ const ResumeSection = () => {
     {
       title: "Equipment Engineer",
       company: "Skorpios Technologies",
-      period: "2025 – Present · San Diego, CA",
+      period: "May 2025 – Present · San Diego, CA",
       description:
         "Sustaining engineering for front-end semiconductor wafer fabrication of silicon-photonic devices — owning dry etch and high-vacuum toolsets across process troubleshooting, preventive maintenance, and tool-down recovery.",
       bullets: [
@@ -84,7 +84,7 @@ const ResumeSection = () => {
     {
       title: "Aircraft Metals Technician",
       company: "U.S. Air Force",
-      period: "Feb 2018 – Dec 2022",
+      period: "Feb 2015 – Dec 2018",
       description:
         "Maintained and repaired mission-critical aircraft hardware to exacting tolerances in zero-defect, high-pressure environments — the same precision-maintenance discipline now applied to fab tool reliability.",
       bullets: [
