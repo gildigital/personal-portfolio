@@ -157,6 +157,163 @@
       linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
     background-size: 56px 56px;
   }
+
+  /* ===========================================================
+     Radar scope — rotating comet sweep with target acquisition
+     =========================================================== */
+  .radar {
+    --radar-duration: 4.5s;
+    --radar-teal: 170 74% 55%;
+    position: absolute;
+    inset: 6%;
+    border-radius: 9999px;
+    overflow: hidden;
+    pointer-events: none;
+    /* feather the disc edge so the sweep never shows a hard seam */
+    -webkit-mask-image: radial-gradient(circle at center, #000 86%, transparent 100%);
+            mask-image: radial-gradient(circle at center, #000 86%, transparent 100%);
+    /* faint phosphor glow over the whole scope */
+    background: radial-gradient(circle at center, hsl(var(--radar-teal) / 0.07), transparent 72%);
+  }
+
+  /* concentric range rings */
+  .radar-rings {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+      radial-gradient(circle at center, transparent 0 23%, hsl(var(--radar-teal) / 0.16) 23% 23.6%, transparent 23.6%),
+      radial-gradient(circle at center, transparent 0 48%, hsl(var(--radar-teal) / 0.13) 48% 48.6%, transparent 48.6%),
+      radial-gradient(circle at center, transparent 0 73%, hsl(var(--radar-teal) / 0.10) 73% 73.6%, transparent 73.6%);
+  }
+
+  /* crosshair graticule */
+  .radar-cross {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+      linear-gradient(to right, transparent calc(50% - 0.5px), hsl(var(--radar-teal) / 0.12) 50%, transparent calc(50% + 0.5px)),
+      linear-gradient(to bottom, transparent calc(50% - 0.5px), hsl(var(--radar-teal) / 0.12) 50%, transparent calc(50% + 0.5px));
+  }
+
+  /* rotating arm + comet tail */
+  .radar-sweep {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    transform-origin: center;
+    will-change: transform;
+    animation: radar-sweep var(--radar-duration) linear infinite;
+  }
+  /* the trailing comet wedge (brightest at the leading edge, fading back) */
+  .radar-sweep::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: conic-gradient(
+      from 0deg at 50% 50%,
+      hsl(var(--radar-teal) / 0.34) 0deg,
+      hsl(var(--radar-teal) / 0) 10deg,
+      transparent 250deg,
+      hsl(var(--radar-teal) / 0.04) 300deg,
+      hsl(var(--radar-teal) / 0.14) 340deg,
+      hsl(var(--radar-teal) / 0.30) 359deg,
+      hsl(var(--radar-teal) / 0.34) 360deg
+    );
+  }
+  /* the bright leading arm itself */
+  .radar-sweep::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--radar-teal) / 0.95),
+      hsl(var(--radar-teal) / 0.35) 55%,
+      transparent
+    );
+    filter: drop-shadow(0 0 8px hsl(var(--radar-teal) / 0.7));
+  }
+
+  /* target blips — flare as the sweep crosses them (delay set inline per angle) */
+  .radar-blip {
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: hsl(var(--radar-teal));
+    box-shadow: 0 0 8px hsl(var(--radar-teal) / 0.85), 0 0 18px hsl(var(--radar-teal) / 0.35);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+    animation: radar-blip var(--radar-duration) ease-out infinite;
+  }
+  /* expanding "lock-on" ping ring; inherits the blip's per-target delay */
+  .radar-blip::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: inherit;
+    border: 1px solid hsl(var(--radar-teal) / 0.6);
+    animation: radar-ping var(--radar-duration) ease-out infinite;
+    animation-delay: inherit;
+  }
+
+  /* glowing center hub */
+  .radar-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 9999px;
+    transform: translate(-50%, -50%);
+    background: hsl(var(--radar-teal));
+    box-shadow: 0 0 10px hsl(var(--radar-teal) / 0.9), 0 0 26px hsl(var(--radar-teal) / 0.4);
+  }
+}
+
+@keyframes radar-sweep {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes radar-blip {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.7);
+  }
+  8% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  55% {
+    opacity: 0.18;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+}
+
+@keyframes radar-ping {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.5);
+  }
+  45% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3.2);
+  }
 }
 
 /* Respect reduced-motion */

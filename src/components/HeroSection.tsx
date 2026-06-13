@@ -1,12 +1,25 @@
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// Targets the radar "acquires". The animation delay is derived from each
+// target's clockwise angle (from 12 o'clock) so a blip flares exactly as the
+// sweep arm passes over it. `r` is the radius as a % of the scope.
+const RADAR_DURATION = 4.5; // seconds — must match --radar-duration in index.css
+const RADAR_TARGETS = [
+  { a: 38, r: 30 },
+  { a: 92, r: 19 },
+  { a: 137, r: 37 },
+  { a: 198, r: 26 },
+  { a: 256, r: 35 },
+  { a: 312, r: 16 },
+];
+
 const WaferGraphic = () => (
   <div className="relative mx-auto aspect-square w-[78%] max-w-sm">
     <div className="absolute inset-0 rounded-full bg-accent/10 blur-3xl animate-pulse-glow" />
     <svg
       viewBox="0 0 200 200"
-      className="relative animate-spin-slow"
+      className="relative"
       style={{ filter: "drop-shadow(0 0 24px hsl(170 74% 55% / 0.25))" }}
       aria-hidden="true"
     >
@@ -42,6 +55,28 @@ const WaferGraphic = () => (
         ))}
       </g>
     </svg>
+
+    {/* Radar scope overlay: range rings, crosshair, sweep arm, target blips */}
+    <div className="radar" aria-hidden="true">
+      <div className="radar-rings" />
+      <div className="radar-cross" />
+      <div className="radar-sweep" />
+      {RADAR_TARGETS.map(({ a, r }) => {
+        const rad = (a * Math.PI) / 180;
+        return (
+          <span
+            key={a}
+            className="radar-blip"
+            style={{
+              left: `${50 + r * Math.sin(rad)}%`,
+              top: `${50 - r * Math.cos(rad)}%`,
+              animationDelay: `${(a / 360) * RADAR_DURATION}s`,
+            }}
+          />
+        );
+      })}
+      <div className="radar-hub" />
+    </div>
   </div>
 );
 
