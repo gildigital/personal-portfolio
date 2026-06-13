@@ -1,5 +1,4 @@
-
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -8,49 +7,53 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#hero' },
-    { name: 'Resume', href: '#resume' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Research', href: '#research' },
-    { name: 'Contact', href: '#contact' },
+    { name: "Home", href: "#hero" },
+    { name: "Capabilities", href: "#capabilities" },
+    { name: "Experience", href: "#resume" },
+    { name: "Work", href: "#projects" },
+    { name: "Research", href: "#research" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-background/90 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'
-    }`}>
+    <header
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-background/90 backdrop-blur-md border-b border-border py-3"
+          : "bg-transparent py-5"
+      }`}
+    >
       <div className="container flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold text-foreground">
-          GM<span className="text-accent">.</span>
+        <a href="#hero" className="font-mono text-lg font-medium tracking-widest text-foreground">
+          GIL&nbsp;MARTINEZ<span className="text-accent">.</span>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-7">
           {navLinks.map((link) => (
-            <a 
+            <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium hover:text-accent transition-colors"
+              className="font-mono text-xs uppercase tracking-wider text-muted-foreground hover:text-accent transition-colors"
             >
               {link.name}
             </a>
           ))}
-          <Button asChild className="bg-accent hover:bg-accent/80 text-primary">
-            <a href="/Gildardo_Martinez_Software_Engineer_FullStack_Node_React_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          <Button asChild size="sm">
+            <a href="/Gil_Martinez_Resume.pdf" target="_blank" rel="noopener noreferrer">
+              Resume
+            </a>
           </Button>
         </nav>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="md:hidden text-foreground p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
@@ -61,20 +64,22 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-md shadow-lg">
+        <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border">
           <nav className="container py-5 flex flex-col space-y-4">
             {navLinks.map((link) => (
-              <a 
+              <a
                 key={link.name}
                 href={link.href}
-                className="text-lg font-medium hover:text-accent transition-colors"
+                className="font-mono text-sm uppercase tracking-wider hover:text-accent transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
               </a>
             ))}
-            <Button asChild className="bg-accent hover:bg-accent/80 text-primary w-full">
-              <a href="/Gildardo_Martinez_Software_Engineer_FullStack_Node_React_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            <Button asChild className="w-full">
+              <a href="/Gil_Martinez_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                Resume
+              </a>
             </Button>
           </nav>
         </div>

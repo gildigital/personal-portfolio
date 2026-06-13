@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import CapabilitiesSection from "@/components/CapabilitiesSection";
 import ResumeSection from "@/components/ResumeSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ResearchSection from "@/components/ResearchSection";
@@ -13,30 +14,27 @@ const Index = () => {
     <HelmetProvider>
       <>
         <Helmet>
-          <title>Gildardo Martinez - Physicist & Equipment Engineer</title>
+          <title>Gil Martinez — Equipment Engineer | Dry Etch &amp; High-Vacuum</title>
           <meta
             name="description"
-            content="Portfolio of Gildardo Martinez — Physicist and Equipment Engineer in the semiconductor industry. Experienced in photonic device fabrication, process systems, and automation, with a background in full-stack development and USAF service."
+            content="Gil Martinez — semiconductor equipment engineer specializing in dry etch and high-vacuum toolsets. Plasma etch process & hardware troubleshooting, RF/bias tuning, ESC/dechuck, chamber recovery, PM development, and tool uptime."
           />
           <meta
             name="keywords"
-            content="physicist, equipment engineer, semiconductor, photonics, process engineering, automation, cleanroom, USAF veteran, full-stack developer"
+            content="equipment engineer, dry etch, plasma etch, high vacuum, semiconductor, Lam Research, Applied Materials, TEL, SPTS, Axcelis, RF matching, ESC, dechuck, turbo pump, chamber recovery, PM, tool uptime, process engineering, San Diego"
           />
 
           {/* Open Graph / Social Media */}
           <meta property="og:type" content="website" />
           <meta
             property="og:title"
-            content="Gildardo Martinez - Physicist & Equipment Engineer"
+            content="Gil Martinez — Equipment Engineer | Dry Etch & High-Vacuum"
           />
           <meta
             property="og:description"
-            content="Physicist and Equipment Engineer specializing in semiconductor fabrication, photonics, and process automation. Bridging physics, software, and precision engineering."
+            content="Semiconductor equipment engineer for dry etch & high-vacuum toolsets. Plasma, vacuum, yield — engineered for uptime."
           />
-          <meta
-            property="og:image"
-            content="/uploads/eff682af-cd4d-4b87-8651-88063286cb65.png"
-          />
+          <meta property="og:image" content="/gildardo-og-image.png" />
 
           {/* Accessibility */}
           <html lang="en" />
@@ -46,6 +44,7 @@ const Index = () => {
           <Header />
           <main className="flex-grow">
             <HeroSection />
+            <CapabilitiesSection />
             <ResumeSection />
             <ProjectsSection />
             <ResearchSection />

@@ -33,29 +33,22 @@ const ContactSection = () => {
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
+    defaultValues: { name: "", email: "", message: "" },
   });
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
-
     try {
       const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-
       const result = await res.json();
-
       if (result.success) {
         toast({
           title: "Message sent!",
-          description: "Thank you for reaching out. I'll get back to you soon.",
+          description: "Thanks for reaching out — I'll get back to you soon.",
         });
         form.reset();
       } else {
@@ -64,7 +57,7 @@ const ContactSection = () => {
     } catch (error) {
       toast({
         title: "Error sending message",
-        description: "Please try again or contact me directly via email.",
+        description: "Please try again or email me directly.",
         variant: "destructive",
       });
     } finally {
@@ -73,45 +66,42 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="bg-primary text-primary-foreground">
+    <section id="contact" className="bg-secondary/40 border-t border-border">
       <div className="container">
-        <h2 className="section-title text-primary-foreground after:bg-accent">
-          Let's Connect
-        </h2>
+        <p className="mono-label mb-2">Contact</p>
+        <h2 className="section-title">Let&apos;s talk tools</h2>
 
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-6 animate-fade-in">
-            <h3 className="text-2xl font-bold">Reach Out</h3>
-            <p className="text-primary-foreground/80 max-w-md">
-              Let's discuss software engineering opportunities. I'm currently
-              available for full-time roles and interesting projects where I can
-              make a meaningful impact.
+            <p className="text-muted-foreground max-w-md">
+              I&apos;m open to equipment and process engineering roles — especially{" "}
+              <span className="text-foreground">dry etch</span> and{" "}
+              <span className="text-foreground">high-vacuum</span> toolsets. Reach out and let&apos;s
+              discuss how I can help keep your fab running.
             </p>
 
-            <div className="space-y-4 pt-4">
+            <div className="space-y-4 pt-2">
               <a
                 href="mailto:martinezgil.sd@gmail.com"
-                className="flex items-center space-x-3 text-primary-foreground/80 hover:text-accent transition-colors"
+                className="flex items-center space-x-3 text-muted-foreground hover:text-accent transition-colors"
               >
                 <Mail className="h-5 w-5" />
                 <span>martinezgil.sd@gmail.com</span>
               </a>
-
               <a
                 href="https://linkedin.com/in/gil-martinez-phys"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-3 text-primary-foreground/80 hover:text-accent transition-colors"
+                className="flex items-center space-x-3 text-muted-foreground hover:text-accent transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
                 <span>linkedin.com/in/gil-martinez-phys</span>
               </a>
-
               <a
                 href="https://github.com/gildigital"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-3 text-primary-foreground/80 hover:text-accent transition-colors"
+                className="flex items-center space-x-3 text-muted-foreground hover:text-accent transition-colors"
               >
                 <Github className="h-5 w-5" />
                 <span>github.com/gildigital</span>
@@ -119,22 +109,16 @@ const ContactSection = () => {
             </div>
 
             <div className="pt-8">
-              <p className="font-mono text-sm text-primary-foreground/60">
-                From aircraft to algorithms, my journey has prepared me to solve
-                complex problems with precision and creativity.
+              <p className="font-mono text-sm text-muted-foreground/70">
+                Physicist by training, equipment engineer by trade — precision under pressure, from the
+                flightline to the fab.
               </p>
             </div>
           </div>
 
-          <div
-            className="animate-fade-in-left"
-            style={{ animationDelay: "0.3s" }}
-          >
+          <div className="animate-fade-in-left" style={{ animationDelay: "0.3s" }}>
             <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-6"
-              >
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
                   control={form.control}
                   name="name"
@@ -142,17 +126,12 @@ const ContactSection = () => {
                     <FormItem>
                       <FormLabel>Name</FormLabel>
                       <FormControl>
-                        <Input
-                          placeholder="Your name"
-                          {...field}
-                          className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground"
-                        />
+                        <Input placeholder="Your name" {...field} className="bg-background border-border" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-
                 <FormField
                   control={form.control}
                   name="email"
@@ -160,18 +139,12 @@ const ContactSection = () => {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input
-                          placeholder="Your email address"
-                          type="email"
-                          {...field}
-                          className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground"
-                        />
+                        <Input placeholder="Your email address" type="email" {...field} className="bg-background border-border" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-
                 <FormField
                   control={form.control}
                   name="message"
@@ -179,22 +152,13 @@ const ContactSection = () => {
                     <FormItem>
                       <FormLabel>Message</FormLabel>
                       <FormControl>
-                        <Textarea
-                          placeholder="Your message"
-                          {...field}
-                          className="min-h-32 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground"
-                        />
+                        <Textarea placeholder="Your message" {...field} className="min-h-32 bg-background border-border" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-accent text-primary hover:bg-accent/80"
-                >
+                <Button type="submit" disabled={isSubmitting} className="w-full">
                   {isSubmitting ? (
                     <>Processing...</>
                   ) : (

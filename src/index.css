@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&family=Space+Grotesk:wght@400..700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,83 +6,67 @@
 
 @layer base {
   :root {
-    --background: 210 33% 99%;
-    --foreground: 222 47% 11%;
+    /* Sleek semiconductor / cleanroom-dark palette */
+    --background: 216 33% 6%;        /* #0A0E14 */
+    --foreground: 208 30% 93%;       /* #E6EDF3 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card: 216 29% 10%;             /* #121821 */
+    --card-foreground: 208 30% 93%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover: 216 29% 10%;
+    --popover-foreground: 208 30% 93%;
 
-    --primary: 214 80% 12%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 170 74% 55%;          /* plasma teal #38E1C6 */
+    --primary-foreground: 216 33% 6%;
 
-    --secondary: 218 45% 92%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 216 26% 13%;        /* raised surface */
+    --secondary-foreground: 208 30% 93%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 213 24% 16%;
+    --muted-foreground: 213 17% 61%; /* #8B9AAD */
 
-    --accent: 174 100% 39%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 170 74% 55%;           /* plasma teal */
+    --accent-foreground: 216 33% 6%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 222 84% 5%;
+    --border: 212 30% 17%;           /* hairline #1E2A38 */
+    --input: 212 30% 17%;
+    --ring: 170 74% 55%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 216 29% 10%;
+    --sidebar-foreground: 208 30% 93%;
+    --sidebar-primary: 170 74% 55%;
+    --sidebar-primary-foreground: 216 33% 6%;
+    --sidebar-accent: 216 26% 13%;
+    --sidebar-accent-foreground: 208 30% 93%;
+    --sidebar-border: 212 30% 17%;
+    --sidebar-ring: 170 74% 55%;
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
-
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222 47% 11%;
-
-    --secondary: 217 33% 18%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217 33% 18%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 174 100% 39%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217 33% 18%;
-    --input: 217 33% 18%;
-    --ring: 213 27% 84%;
-
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 216 33% 6%;
+    --foreground: 208 30% 93%;
+    --card: 216 29% 10%;
+    --card-foreground: 208 30% 93%;
+    --popover: 216 29% 10%;
+    --popover-foreground: 208 30% 93%;
+    --primary: 170 74% 55%;
+    --primary-foreground: 216 33% 6%;
+    --secondary: 216 26% 13%;
+    --secondary-foreground: 208 30% 93%;
+    --muted: 213 24% 16%;
+    --muted-foreground: 213 17% 61%;
+    --accent: 170 74% 55%;
+    --accent-foreground: 216 33% 6%;
+    --destructive: 0 63% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 212 30% 17%;
+    --input: 212 30% 17%;
+    --ring: 170 74% 55%;
   }
 }
 
@@ -96,7 +80,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans antialiased;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
   }
 
@@ -104,78 +88,83 @@
     @apply py-16 md:py-24 px-6;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-sans font-bold tracking-tight;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-medium tracking-tight;
   }
 
-  h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl mb-6;
-  }
+  h1 { @apply text-4xl md:text-5xl lg:text-6xl mb-6; }
+  h2 { @apply text-3xl md:text-4xl mb-6; }
+  h3 { @apply text-2xl md:text-3xl mb-4; }
 
-  h2 {
-    @apply text-3xl md:text-4xl mb-6;
-  }
-
-  h3 {
-    @apply text-2xl md:text-3xl mb-4;
-  }
-
-  .container {
-    @apply mx-auto px-4 sm:px-6 lg:px-8;
-  }
+  .container { @apply mx-auto px-4 sm:px-6 lg:px-8; }
 }
 
 @layer components {
-  .section-title {
-    @apply relative pb-2 mb-8 text-2xl md:text-3xl font-bold;
+  /* Mono spec-sheet labels like "01 / ETCH" */
+  .mono-label {
+    @apply font-mono text-xs uppercase tracking-[0.25em] text-accent;
+  }
+  .mono-label-muted {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground;
   }
 
+  .section-title {
+    @apply relative pb-3 mb-10 text-3xl md:text-4xl font-display font-medium;
+  }
   .section-title::after {
     content: "";
-    @apply absolute bottom-0 left-0 w-16 h-1 bg-accent;
+    @apply absolute bottom-0 left-0 w-16 h-0.5 bg-accent;
   }
 
-  .timeline-item {
-    @apply relative pl-10 pb-10 border-l border-slate;
+  /* Raised panel card with hairline + teal glow on hover */
+  .panel {
+    @apply rounded-lg border border-border bg-card transition-all duration-300;
+  }
+  .panel-hover:hover {
+    @apply border-accent/40 -translate-y-1;
+    box-shadow: 0 0 0 1px hsl(var(--accent) / 0.15), 0 18px 40px -20px hsl(var(--accent) / 0.35);
   }
 
-  .timeline-item::before {
-    content: "";
-    @apply absolute w-4 h-4 bg-accent rounded-full -left-2 mt-1.5;
-  }
-
-  .timeline-item:last-child {
-    @apply border-l-0 pb-0;
-  }
-
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
-  }
-
-  .badge {
-    @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80;
-  }
-
-  .badge-accent {
-    @apply bg-accent text-accent-foreground hover:bg-accent/80;
-  }
-
+  /* Spec/skill chip, mono, hairline */
   .tech-badge {
-    @apply inline-block px-3 py-1 text-xs font-medium rounded-full bg-secondary text-secondary-foreground mr-2 mb-2;
+    @apply inline-block font-mono text-xs px-3 py-1 rounded-md border border-border bg-secondary text-muted-foreground mr-2 mb-2;
+  }
+  .tech-badge-accent {
+    @apply inline-block font-mono text-xs px-3 py-1 rounded-md border border-accent/30 bg-accent/10 text-accent mr-2 mb-2;
+  }
+
+  .stat-num {
+    @apply font-display font-medium text-accent;
   }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  .text-balance { text-wrap: balance; }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-teal-dark;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-[#6E8BFF];
+  }
+
+  /* Faint concentric-wafer + plasma glow background for the hero */
+  .wafer-bg {
+    background-image:
+      radial-gradient(circle at 80% 25%, hsl(170 74% 55% / 0.10), transparent 42%),
+      radial-gradient(circle at 88% 30%, hsl(228 100% 72% / 0.10), transparent 40%);
+  }
+  .grid-lines {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+}
+
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }

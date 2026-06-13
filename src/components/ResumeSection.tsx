@@ -1,4 +1,4 @@
-import { Calendar, Code, Database, FileCode, PenTool } from "lucide-react";
+import { Calendar, Cpu, Plane, FlaskConical } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface ResumeItemProps {
@@ -6,6 +6,7 @@ interface ResumeItemProps {
   company: string;
   period: string;
   description: string;
+  bullets: string[];
   icon: React.ReactNode;
   skills: string[];
   delay: number;
@@ -16,44 +17,45 @@ const ResumeItem = ({
   company,
   period,
   description,
+  bullets,
   icon,
   skills,
   delay,
 }: ResumeItemProps) => (
-  <div
-    className="relative pl-12 animate-fade-in"
-    style={{ animationDelay: `${delay}s` }}
-  >
-    {/* Timeline Dot */}
-    <div className="absolute left-0 top-2 w-6 h-6 bg-accent rounded-full flex items-center justify-center">
-      <div className="text-white">{icon}</div>
+  <div className="relative pl-12 animate-fade-in" style={{ animationDelay: `${delay}s` }}>
+    {/* Timeline node */}
+    <div className="absolute left-0 top-1 w-6 h-6 bg-accent rounded-full flex items-center justify-center ring-4 ring-background">
+      <div className="text-background">{icon}</div>
     </div>
 
-    {/* Content */}
-    <div className="mb-2 flex items-center gap-3 flex-wrap">
-      <h3 className="text-xl font-semibold text-slate-800">{title}</h3>
-      <span
-        className="px-3 py-1 text-sm font-medium rounded-md text-white"
-        style={{ backgroundColor: "#37c5b3" }}
-      >
+    <div className="mb-1 flex items-center gap-3 flex-wrap">
+      <h3 className="text-xl font-display font-medium text-foreground">{title}</h3>
+      <span className="font-mono text-xs px-3 py-1 rounded-md bg-accent/10 border border-accent/30 text-accent">
         {company}
       </span>
     </div>
 
-    <div className="flex items-center text-sm text-slate-500 mb-3">
-      <Calendar className="mr-2 h-4 w-4" />
+    <div className="flex items-center text-xs font-mono text-muted-foreground mb-3">
+      <Calendar className="mr-2 h-3.5 w-3.5" />
       <span>{period}</span>
     </div>
 
-    <p className="text-slate-700 mb-4">{description}</p>
+    <p className="text-muted-foreground mb-3">{description}</p>
 
-    <div className="flex flex-wrap gap-2 mb-8">
+    {bullets.length > 0 && (
+      <ul className="space-y-2 mb-4">
+        {bullets.map((b, i) => (
+          <li key={i} className="flex gap-3 text-sm text-foreground/90">
+            <span className="text-accent mt-1.5 shrink-0">▸</span>
+            <span dangerouslySetInnerHTML={{ __html: b }} />
+          </li>
+        ))}
+      </ul>
+    )}
+
+    <div className="flex flex-wrap mb-8">
       {skills.map((skill) => (
-        <span
-          key={skill}
-          className="text-sm px-3 py-1 rounded-full font-medium text-slate-800"
-          style={{ backgroundColor: "#e2e8f3" }}
-        >
+        <span key={skill} className="tech-badge">
           {skill}
         </span>
       ))}
@@ -64,70 +66,66 @@ const ResumeItem = ({
 const ResumeSection = () => {
   const resumeItems: ResumeItemProps[] = [
     {
-      title: "Software Engineer",
-      company: "LeetPhys",
-      period: "March 2024 - Present",
+      title: "Equipment Engineer",
+      company: "Skorpios Technologies",
+      period: "2025 – Present · San Diego, CA",
       description:
-        "Developed full-stack SaaS app with React, Node.js, TypeScript, and PostgreSQL, serving ~1000 active users. Increased signups by 400% with Google One-Click Signup.",
-      icon: <Code className="h-4 w-4" />,
-      skills: ["React", "Node.js", "TypeScript", "PostgreSQL", "Google Auth"],
+        "Sustaining engineering for front-end semiconductor wafer fabrication of silicon-photonic devices — owning dry etch and high-vacuum toolsets across process troubleshooting, preventive maintenance, and tool-down recovery.",
+      bullets: [
+        "Root-caused chronic wafer sticking on a <span class='text-foreground'>Lam Rainbow / TCP 9600</span> dry-etch tool to inadequate ESC dechuck behavior; corrected and verified the recipe across affected processes, restoring stable wafer release and lifting usable throughput from ~1 to ~36 wafers/day — a <span class='text-accent'>~36× improvement</span>.",
+        "Improved process uniformity through <span class='text-foreground'>RF / bias tuning</span> on TCP 9600 Al etch (BCl₃/Cl₂/N₂) and GaN troubleshooting — evaluating bottom-RF, board calibration, and pressure/temperature/reflected-power stability; one test set cut etch-rate std-dev from ~0.089 to ~0.043.",
+        "Drove Pareto-led root cause and corrective action across a dry-etch fleet spanning <span class='text-foreground'>Lam, Applied Materials, TEL, SPTS, and Axcelis</span> — building PM/recovery docs, coordinating vendor field service, sourcing parts, and tightening post-PM startup/qual to reduce repeat down events.",
+        "Troubleshot high-vacuum and plasma integrity — turbo-pump performance, base-pressure recovery, helium backside leakage, ESC clamping, and chamber seasoning/fingerprinting — establishing baseline tool behavior so abnormal states surface faster.",
+      ],
+      icon: <Cpu className="h-3.5 w-3.5" />,
+      skills: ["Dry Etch", "High Vacuum", "RF / Match", "ESC / Dechuck", "PM / CAPA", "Tool Qual"],
       delay: 0.1,
     },
     {
-      title: "Research Assistant",
-      company: "USD",
-      period: "January 2023 - December 2024",
-      description:
-        "Authored first-author paper in Soft Matter, developing ML tools with PyTorch to reduce data needs by 99%.",
-      icon: <PenTool className="h-4 w-4" />,
-      skills: ["Machine Learning", "PyTorch", "Python", "Data Analysis"],
-      delay: 0.2,
-    },
-    {
-      title: "Software Engineer Intern",
-      company: "AWS",
-      period: "Summer 2024",
-      description:
-        "Built Java applications with DynamoDB, boosting throughput for petabyte-scale systems.",
-      icon: <Database className="h-4 w-4" />,
-      skills: ["Java", "AWS", "DynamoDB", "Cloud Infrastructure"],
-      delay: 0.3,
-    },
-    {
       title: "Aircraft Metals Technician",
-      company: "USAF",
-      period: "February 2018 - December 2022",
+      company: "U.S. Air Force",
+      period: "Feb 2018 – Dec 2022",
       description:
-        "Collaborated in high-pressure teams, ensuring mission-critical aircraft safety.",
-      icon: <FileCode className="h-4 w-4" />,
-      skills: ["Team Leadership", "Critical Thinking", "Problem Solving"],
+        "Maintained and repaired mission-critical aircraft hardware to exacting tolerances in zero-defect, high-pressure environments — the same precision-maintenance discipline now applied to fab tool reliability.",
+      bullets: [
+        "Precision machining, inspection, and failure analysis of flight-critical components under strict quality and safety standards.",
+        "Operated in tight-turnaround maintenance teams where uptime and repeatability were non-negotiable.",
+      ],
+      icon: <Plane className="h-3.5 w-3.5" />,
+      skills: ["Precision Hardware", "Tolerances", "Failure Analysis", "Maintenance Discipline"],
+      delay: 0.25,
+    },
+    {
+      title: "Physics Researcher",
+      company: "University of San Diego",
+      period: "Jan 2023 – Dec 2024",
+      description:
+        "Experimental soft-matter research with a first-author publication in Soft Matter — rigorous experimental method and quantitative root-cause analysis, the analytical core of process engineering.",
+      bullets: [
+        "Built quantitative image-analysis pipelines that cut required experimental data by ~99%.",
+        "Translated messy experimental data into defensible, reproducible conclusions.",
+      ],
+      icon: <FlaskConical className="h-3.5 w-3.5" />,
+      skills: ["Experimental Method", "Data Analysis", "Optics", "Python", "Publication"],
       delay: 0.4,
     },
   ];
 
   return (
-    <section id="resume" className="bg-secondary/30 py-20">
-      <div className="container max-w-4xl mx-auto px-6">
-        <div className="mb-12 text-center">
-          <h2 className="text-4xl font-bold mb-3 text-slate-800">Experience</h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">
-            My path from the Air Force to software engineering blends technical precision, leadership, and a drive to solve complex problems.
-          </p>
-        </div>
+    <section id="resume">
+      <div className="container max-w-4xl mx-auto">
+        <p className="mono-label mb-2">Experience</p>
+        <h2 className="section-title">From flightline to fab</h2>
 
-        <div className="relative border-l border-slate-300 pl-8 space-y-12">
+        <div className="relative border-l border-border pl-2 space-y-10 mt-10">
           {resumeItems.map((item, index) => (
             <ResumeItem key={index} {...item} />
           ))}
         </div>
 
-        <div className="mt-12 flex justify-center">
+        <div className="mt-10">
           <Button asChild variant="outline">
-            <a
-              href="/Gildardo_Martinez_Software_Engineer_FullStack_Node_React_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="/Gil_Martinez_Resume.pdf" target="_blank" rel="noopener noreferrer">
               Download Resume
             </a>
           </Button>
