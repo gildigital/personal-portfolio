@@ -21,7 +21,7 @@ const Index = () => {
           />
           <meta
             name="keywords"
-            content="equipment engineer, dry etch, plasma etch, high vacuum, semiconductor, Lam Research, Applied Materials, TEL, SPTS, Axcelis, RF matching, ESC, dechuck, turbo pump, chamber recovery, PM, tool uptime, process engineering, San Diego"
+            content="equipment engineer, dry etch, plasma etch, high vacuum, semiconductor, Lam Research, Applied Materials, TEL, SPTS, Axcelis, RF matching, ESC, dechuck, turbo pump, chamber recovery, PM, tool uptime, process engineering, Temecula"
           />
 
           {/* Open Graph / Social Media */}

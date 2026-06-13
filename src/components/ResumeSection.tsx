@@ -68,7 +68,7 @@ const ResumeSection = () => {
     {
       title: "Equipment Engineer",
       company: "Skorpios Technologies",
-      period: "May 2025 – Present · San Diego, CA",
+      period: "May 2025 – Present · Temecula, CA",
       description:
         "Sustaining engineering for front-end semiconductor wafer fabrication of silicon-photonic devices — owning dry etch and high-vacuum toolsets across process troubleshooting, preventive maintenance, and tool-down recovery.",
       bullets: [
